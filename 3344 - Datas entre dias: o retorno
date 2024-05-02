@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, j, t, aux, count = 0, v[n], v2[n];
+    scanf("%d", &n);
+    for (i = 0; i < n; i++) 
+    {
+        scanf("%d", &v[i]);
+        v2[i] = v[i];
+    }
+    for (i = 0; i < n - 1; i++) 
+    {
+        t = 0;
+        for (j = 0; j < n - i - 1; j++) 
+        {
+            if (v2[j] > v2[j + 1]) 
+            {
+                aux = v2[j];
+                v2[j] = v2[j + 1];
+                v2[j + 1] = aux;
+                t = 1;
+            }
+        }
+        if (t == 0)
+        {
+            break;
+        }
+    }
+    for (i = 0; i < n; i++)
+    {
+        if (v[i] == v2[i])
+            count++;
+    }
+    printf("%d\n", count);
+    for (i = 0; i < n; i++)
+    {
+        if (v[i] == v2[i])
+                printf("%d %d\n", v[i], i + 1);
+    }
+
+
+    return 0;
+}
