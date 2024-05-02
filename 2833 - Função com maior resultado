@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int r(int x, int y)
+{
+    return pow(3*x, 2) + pow(y, 2);
+}
+int b(int x, int y)
+{
+    return 2*x*x + pow(5*y, 2);
+}
+int c(int x, int y)
+{
+    return -100*x + pow(y, 3);
+}
+
+int main()
+{
+   int n, x, y, i, aux, aux2, aux3;
+   scanf("%d", &n);
+   for (i=0; i<n; i++)
+   {
+       scanf("%d%d", &x, &y);
+       aux = r(x, y);
+       aux2 = b(x, y);
+       aux3 = c(x, y);
+       if(aux>aux2 && aux>aux3)
+       {
+           printf("Rafael ganhou\n");
+       }
+       else if(aux2>aux && aux2>aux3)
+       {
+           printf("Beto ganhou\n");
+       }
+       else
+       {
+           printf("Carlos ganhou\n");
+       }
+   }
+   
+   return 0;
+}
