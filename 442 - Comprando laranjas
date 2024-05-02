@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int laranjas;
+    double total;
+    scanf ("%d", &laranjas);
+    printf("%d\n", laranjas / 12);
+    printf("%.2lf\n", (8.35/12) * laranjas);
+
+    return 0;
+}
