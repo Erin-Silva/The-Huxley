@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+
+
+int calculo_prestacao(double f, int n, double t)
+{
+     double an = (pow(1 + t, n) - 1) / (t * pow(1 + t, n));
+    return f / an;
+}
+
+int main() 
+{
+    double valor, taxa_juros;
+    int prestacoes;
+    scanf("%lf %d %lf", &valor, &prestacoes, &taxa_juros);
+    printf("%d\n", calculo_prestacao(valor, prestacoes, taxa_juros));
+    return 0;
+}
