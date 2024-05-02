@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <math.h>
+
+
+int funcao(long long n) 
+{
+    int cont = 0;
+
+    if (n == 0) 
+        cont = 1;
+    else 
+    {
+        while (n > 0) 
+        {
+            n = n / 10;//a divis�o por 10 serve para remover o ultimo digito
+            cont++;
+        }
+    }
+    return cont;
+}
+
+int main() 
+{
+    long long x;
+    scanf("%lld", &x);
+    int result = funcao(x);
+    printf("%d\n", result);
+    return 0;
+}
