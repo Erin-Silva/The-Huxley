@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{
+    int cod, qtd, cont=0, codAux, qtdAux;
+    double preco, total, maisCaro;
+    scanf("%d%d%lf", &cod, &qtd, &preco);
+    
+    while(cod!=0)
+    {
+        total=preco*qtd;
+        if(cont==0||total>maisCaro)
+        {
+            maisCaro=total;
+            codAux=cod;
+            qtdAux=qtd;
+        }
+        cont++;
+        scanf("%d%d%lf", &cod, &qtd, &preco);
+    }
+    
+    if(cont==0)
+      printf("nao tem compras\n");
+    else
+    {
+        printf("Item mais caro\n");
+        printf("Codigo: %d\n", codAux);
+        printf("Quantidade: %d\n", qtdAux);
+        printf("Custo: %.2lf\n", maisCaro);
+    }
+    
+	return 0;
+}
