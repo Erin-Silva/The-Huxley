@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+/*tempo em segundos. dias, horas, minutos, segundos */
+
+int main()
+{
+    int s, d, h, m, seg, res;
+    scanf ("%d", &s);
+    d= s/86400;
+    res= s%86400;
+    h= res/3600;
+    res= res%3600;
+    m= res/60;
+    seg= res%60;
+    printf("%d\n%d\n%d\n%d\n", d, h, m, seg);
+    return 0;
+}
