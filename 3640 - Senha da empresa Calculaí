@@ -1,0 +1,91 @@
+#include <stdio.h>
+#include <string.h>
+#define MAX 5
+#define TAM 51
+
+typedef struct {
+    char nome[TAM];
+    char data[11];
+    char cidade[TAM];
+    char idade[4];
+    char senha[TAM];
+    char temp[11];
+    char cidade2[TAM];
+} registro;
+
+int main() {
+    registro m[MAX];
+    int i, j, senha2, idade2, digito, x;
+    char aux[TAM], age[TAM];
+
+    i = 0;
+    scanf("%[^\n]", aux);
+    while (i < MAX && (strcmp(aux, "SAIR") != 0))
+    {
+        getchar();
+        strcpy(m[i].nome, aux);
+        scanf("%s", m[i].data);
+        getchar();
+        scanf("%[^\n]", m[i].cidade);
+        getchar();
+        scanf("%s", m[i].idade);
+        getchar();
+        strcpy(m[i].temp, m[i].data);
+        strcpy(m[i].cidade2, m[i].cidade);
+
+        // Remova as barras da data tempor?ria em m[i].temp
+        for (j = 0; m[i].temp[j] != '\0'; j++)
+        {
+            if (m[i].temp[j] == '/')
+            {
+                for (int k = j; m[i].temp[k] != '\0'; k++)
+                {
+                    m[i].temp[k] = m[i].temp[k + 1];
+                    x=k;
+                }
+            }
+        }
+        m[i].temp[x] = '\0';
+
+        for (j = 0; m[i].cidade2[j] != '\0'; j++)
+        {
+            if (m[i].cidade2[j] == ' ')
+            {
+                for (int k = j; m[i].cidade2[k] != '\0'; k++)
+                {
+                    m[i].cidade2[k] = m[i].cidade2[k + 1];
+                    x=k;
+                }
+            }
+        }
+        m[i].cidade2[x] = '\0';
+        senha2 = 0;
+        for (j = 0; j < 4; j++)
+        {
+            m[i].senha[senha2++] = m[i].nome[j];
+            m[i].senha[senha2++] = m[i].temp[j];
+            m[i].senha[senha2++] = m[i].cidade2[j];
+        }
+        m[i].senha[senha2++] = m[i].nome[j];
+
+        for (int k = 0;m[i].idade[k] != '\0'; k++)
+        {
+            m[i].senha[senha2++] = m[i].idade[k];
+        }
+        m[i].senha[senha2] = '\0';
+
+        scanf("%[^\n]", aux);
+        i++;
+    }
+
+    for (j = 0; j < i; j++)
+    {
+        printf("Nome: %s\n", m[j].nome);
+        printf("Data de Nascimento: %s\n", m[j].data);
+        printf("Cidade Natal: %s\n", m[j].cidade);
+        printf("Idade: %s anos\n", m[j].idade);
+        printf("Senha: %s\n\n", m[j].senha);
+    }
+
+    return 0;
+}
