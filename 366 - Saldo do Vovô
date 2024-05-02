@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{
+    int numDia, saldo, aux, cont, menorS =0;
+    scanf("%d%d", &numDia, &saldo);
+    aux=saldo;
+    
+    for(cont=0;numDia>cont;cont++)
+    {
+        scanf("%d", &saldo);
+        aux+=saldo; //acumulando saldo
+        if(aux<menorS || menorS==0)//caso o aux for menor, ent�o ele que vai mostrar ap�s a troca 
+          menorS=aux;//fazer a troca para ter certeza que mostrar� o menor saldo. "atualizar a vari�vel"
+    }
+    
+    
+    
+    printf("%d\n", menorS);
+	return 0;
+}
