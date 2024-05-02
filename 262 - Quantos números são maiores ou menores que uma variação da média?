@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    double nota[20000], soma, media;
+    int n, x, acima, abaixo;
+    scanf("%d", &n);
+    soma=0;
+    for(x=0;x<n;x++)
+    {
+        scanf("%lf", &nota[x]);
+        soma+=nota[x];
+    }
+    media=soma/n;
+    printf("%.2lf\n", media);
+    acima=abaixo=0;//atribui��o multipla. Acontece da direita para a esquerda.
+    for(x=0;x<n;x++)
+    {
+        if(nota[x]>media*1.1)
+            acima++;
+        if(nota[x]<media*0.9)
+            abaixo++;
+    }
+    printf("%d\n", acima);
+    printf("%d\n", abaixo);
+    return 0;
+}
