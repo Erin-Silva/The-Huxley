@@ -1,0 +1,81 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct
+{
+    char nome[50];
+    char numero[15];
+    int code;
+} contatos;
+
+int main()
+{
+    int n, i, j, found, comp;
+    char search[50];
+    contatos m[50];
+
+    scanf("%d", &n);
+    getchar();
+
+    for (i = 0; i < n; i++)
+    {
+        fgets(m[i].nome, sizeof(m[i].nome), stdin);
+        m[i].nome[strcspn(m[i].nome, "\n")] = '\0';
+        
+        fgets(m[i].numero, sizeof(m[i].numero), stdin);
+        m[i].numero[strcspn(m[i].numero, "\n")] = '\0';
+        
+        scanf("%d", &m[i].code);
+        
+        getchar();
+    }
+
+    while (1)
+    {
+        found = 0;
+        scanf("%s", search);
+        if (search[0] == '#')
+            break;
+
+        for (i = 0; i < n; i++)
+        {
+            comp = 1;
+            for (j = 0; search[j] != '\0'; j++)
+            {
+                if (search[j] != m[i].nome[j])
+                {
+                    comp = 0;
+                    break;
+                }
+            }
+            
+            if (comp)
+            //(strcmp(m[i].nome, search) == 0)
+            {
+                found = 1;
+                printf("Nome: %s\n", m[i].nome);
+                printf("Numero: %s\n", m[i].numero);
+                if (m[i].code == 1)
+                {
+                    printf("Vinculo: Familia\n");
+                }
+                else if (m[i].code == 2)
+                {
+                    printf("Vinculo: Faculdade\n");
+                }
+                else if (m[i].code == 3)
+                {
+                    printf("Vinculo: Amigo\n");
+                }
+                printf("\n");
+            }
+        }
+
+        if (found == 0)
+        {
+            printf("%s nao foi cadastrado\n\n", search);
+        }
+    }
+
+    return 0;
+}
