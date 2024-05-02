@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{
+    int prin, elei, m[100][50];
+    int i, k, qtd;
+    scanf ("%d%d", &prin, &elei);
+    for (i=0; i<elei; i++)
+    {
+        for (k=0; k<prin; k++)
+            scanf("%d", &m[i][k]);
+    }
+    for (k=0; k<prin; k++)
+    {
+        for (i=0, qtd=0; i<elei; i++)
+            qtd += m[i][k];
+        printf ("Princesa %d: %d voto(s)\n", k+1, qtd);
+    }
+    return 0;
+}
