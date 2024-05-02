@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 10000
+#define TAM 101
+
+int main()
+{
+    int t, aux, cont, menor, i, j, n, x = 0, y = 0, z = 0;
+    scanf("%d", &t);
+    int v1[TAM], v2[MAX], v3[MAX];
+    for(aux=0; aux<t; aux++)
+    {
+        scanf("%d", &v1[aux]);
+    }
+    for(aux=0; aux<t; aux++)
+    {
+        scanf("%d", &v2[aux]);
+    }
+    for(i=0; i<t-1; i++)
+    {
+        menor=i;
+        for(j=i+1; j<t; j++)
+        {
+            if(v1[j]<v1[menor])            
+                menor=j;            
+        }
+        if(menor!=i)
+        {
+            aux=v1[i];
+            v1[i]=v1[menor];
+            v1[menor]=aux;
+        }
+    }
+     for(i=0; i<t-1; i++)
+     {
+        menor=i;
+        for(j=i+1; j<t; j++)
+        {
+            if(v2[j]<v2[menor])
+                menor=j;            
+        }
+        if(menor!=i)
+        {
+            aux=v2[i];
+            v2[i]=v2[menor];
+            v2[menor]=aux;
+        }
+    }
+    for(aux=0; aux<t; aux++)
+    {
+        for(cont= 0; cont<t; cont++)
+        {
+            if(v1[aux]==v2[cont])
+            {
+                for(n=0; n<t; n++)
+                {
+                    if(v1[aux]==v3[n])
+                        x=1;                    
+                }
+                if(x==0)
+                {
+                    v3[z++]=v1[aux];
+                    y++;
+                }
+                x=0;
+                break;
+            }
+        }
+    }
+    for(aux=0; aux<y; aux++)
+    {
+        printf("%d\n", v3[aux]);
+    }
+    return 0;
+}
