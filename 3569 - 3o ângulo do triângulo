@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    double a,b,c;
+    scanf ("%lf %lf", &a, &b);
+    c= 180-(a+b);
+    printf ("3o angulo=%.6lf\n", c);
+    return 0;
+}
