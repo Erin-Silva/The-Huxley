@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x, y, aux, z;
+    scanf("%d%d", &x, &y);
+
+    if(x>y)
+    {
+        aux=y;
+        y=x;
+        x=aux;
+    }
+    for(z=x; z>x, z<y; z++)
+    {
+        if(z%5==2 || z%5==3)
+        {
+            printf("%d\n", z);
+        }
+    }
+
+
+    return 0;
+}
+
+/*    if(x>y)
+    {
+        aux=y;
+        y=x;
+        x=aux;
+    }
+
+    while(z<x)
+    {
+        if(z%5==2 || z%5==3)
+        {
+            printf("%d\n", z);
+            z++;
+        }
+         else
+        {
+            x=aux;
+            y=x;
+            aux=y;
+        }
+        while(z<y)
+        {
+            if(z%5==2 || z%5==3)
+            {
+                printf("%d\n", z);
+                z++;
+            }
+        }
+    }*/
