@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+typedef struct
+{
+    int pastel;
+    int empada;
+    int kibe;
+    int ovo;
+    int flour;
+    int sugar;
+    int meat;
+    double preco, preco_ovo, preco_flour, preco_sugar, preco_meat;
+} produtos;
+
+int main()
+{
+    int i;
+    double custo_pastel=0, custo_empada=0, custo_kibe=0;
+    produtos v_prod[3];
+
+    for (i = 0; i < 3; i++)
+    {
+        scanf("%d %d %d %d", &v_prod[i].ovo, &v_prod[i].flour, &v_prod[i].sugar, &v_prod[i].meat);
+    }
+    scanf("%lf %lf %lf %lf", &v_prod[0].preco_ovo, &v_prod[0].preco_flour, &v_prod[0].preco_sugar, &v_prod[0].preco_meat);
+
+    custo_pastel = (v_prod[0].ovo * v_prod[0].preco_ovo + v_prod[0].flour * v_prod[0].preco_flour + v_prod[0].sugar * v_prod[0].preco_sugar + v_prod[0].meat * v_prod[0].preco_meat);
+    custo_empada = (v_prod[1].ovo * v_prod[0].preco_ovo + v_prod[1].flour * v_prod[0].preco_flour + v_prod[1].sugar * v_prod[0].preco_sugar + v_prod[1].meat * v_prod[0].preco_meat);
+    custo_kibe = (v_prod[2].ovo * v_prod[0].preco_ovo + v_prod[2].flour * v_prod[0].preco_flour + v_prod[2].sugar * v_prod[0].preco_sugar + v_prod[2].meat * v_prod[0].preco_meat);
+
+    printf("%.2lf\n", custo_pastel);
+    printf("%.2lf\n", custo_empada);
+    printf("%.2lf\n", custo_kibe);
+
+    return 0;
+}
