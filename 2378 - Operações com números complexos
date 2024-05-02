@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+typedef struct
+{
+    int a, b;
+}complex;
+
+int print(int a, int b)
+{
+    return printf("%d+%di\n", a, b);
+}
+
+complex_soma(complex z1, complex z2)
+{
+    int soma, soma2;
+    soma = z1.a + z2.a;
+    soma2 = z1.b + z2.b;
+    printf("Soma: ");
+    print (soma, soma2);
+
+}
+
+complex_multi(complex z1, complex z2)
+{
+    int multi, multi2;
+    multi = (z1.a*z2.a) - (z1.b*z2.b);
+    multi2 = (z1.a*z2.b) + (z2.a*z1.b);
+    printf("Multi: ");
+    print (multi, multi2);
+
+}
+
+
+
+int main()
+{
+    complex z1, z2;
+    scanf("%d%d", &z1.a, &z1.b);
+    scanf("%d%d", &z2.a, &z2.b);
+
+    complex_soma(z1, z2);
+    complex_multi(z1, z2);
+
+
+    return 0;
+}
