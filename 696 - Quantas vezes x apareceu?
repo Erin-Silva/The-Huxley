@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int v[10], x, cont=0, i;
+    for(i=0; i<10; i++)
+    {
+        scanf("%d", &v[i]);
+    }
+    scanf("%d", &x);
+    for(i=0; i<10; i++)
+    {
+        if(v[i]==x)
+        {
+            cont++;
+        }
+    }
+    printf("%d", cont);
+    return 0;
+}
