@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main(){
+    int num, i, j, m, meio, M, aux;
+    int v[1000];
+    scanf("%d", &num);
+    for(i=0; i<num; i++)
+    {
+        scanf("%d", &v[i]);
+    }
+     for(i=0; i<num-1; i++)
+     {
+        m=i;
+        for(j=i+1; j<num; j++)
+        {
+            if(v[j]<v[m])
+                m=j;            
+        }
+        if(m!=j)
+        {
+            aux=v[m];
+            v[m]=v[i];
+            v[i]=aux;
+        }
+    }
+    m=v[0];
+    meio=v[num/2];
+    M=v[num-1];    
+    printf("%d %d %d\n", m, meio, M);    
+    return 0;
+}
