@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 10000
+
+int main()
+{
+    int m[MAX];
+    int n, d, i, j, cont, impar=0, p1=0, p2=0, p3=0, p4=0;
+    scanf ("%d%d", &n, &d);
+    for(i=0; i<n; i++) 
+    {
+        scanf("%d", &m[i]);
+    }
+    if(n<6 || n>40 || d<1 || d>31)
+    {
+        printf ("ENTRADA INVALIDA\n");
+    }
+    else 
+    {
+        for(i=0; i<n-1; i++)
+        {
+            for(j=i+1; j<n; j++)
+            {
+                if(m[i]+m[j]==d)
+                    p1++;
+            }
+        }
+        for(i=0; i<n; i++) 
+        {
+            if(m[i]%2!=0)
+                impar++;
+        }
+        if(impar > n/2)
+        {
+            p2++;
+        }            
+        for(i=0; i<n; i++)
+        {
+            cont=0;
+            for(j=1; j<=m[i]; j++)
+            {
+                if(m[i]%j==0)
+                    cont++;
+            }
+            if (cont==2)
+            {
+                p3++;
+            }                
+        }
+        if (p1>0 && p2>0 && p3>0)
+        {
+            p4++;
+        }
+        if (p1>0)
+            printf("Promocao 1: SIM\n");
+        else
+            printf("Promocao 1: NAO\n");
+        if(p2>0)
+            printf("Promocao 2: SIM\n");
+        else
+            printf("Promocao 2: NAO\n");
+        if(p3>0)
+            printf("Promocao 3: SIM\n");
+        else
+            printf("Promocao 3: NAO\n");
+        if(p4>0)
+            printf("Promocao 4: SIM\n");
+        else
+            printf("Promocao 4: NAO\n");
+            
+    }
+    return 0;
+}
