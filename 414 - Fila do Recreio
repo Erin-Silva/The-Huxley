@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define TAM 1000
+
+int main()
+{
+    int casos, notas, i, j, k, maior, v1[TAM], v2[TAM], aux=0, cont;
+    scanf("%d", &casos);
+    for(k=0; k<casos; k++)
+    {
+        scanf("%d", &notas);
+        for(i=0; i<notas; i++)
+        {
+            scanf("%d", &v1[i]);
+            v2[i]=v1[i];
+        }
+        for(i=0; i<notas-1; i++)
+        {
+            maior=i;
+            for(j=i+1; j<notas; j++)
+            {
+                if(v2[j]>v2[maior])
+                {
+                    maior=j;
+                }
+            }
+            if(maior!=i)
+            {
+                aux=v2[i];
+                v2[i]=v2[maior];
+                v2[maior]=aux;
+            }
+        }
+        for(i=0, cont=0; i<notas; i++)
+        {
+            if(v1[i]==v2[i])
+            cont++;
+        }
+        printf("%d\n", cont);
+    }
+    return 0;
+}
