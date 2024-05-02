@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int graf, ia, enc, ind, structs;
+    int a = 0;
+    scanf ("%d%d%d%d%d", &graf, &ia, &enc, &ind, &structs);
+
+    if (graf==1||ia==1)
+    {
+        a = a+1;
+    }
+    if (enc==1&&ind==1)
+    {
+        a = a+1;
+    }
+    if (structs==1)
+    {
+        a=a+1;
+    }
+    if (a==3)
+    {
+        printf("AVALIADO\n");
+
+    }
+    else
+    {
+        printf ("0\n");
+    }
+
+    return 0;
+}
