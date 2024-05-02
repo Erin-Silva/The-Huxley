@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int competidores, voltas, tempo, menorT=0, total, aux=1, i, x;
+    scanf("%d%d", &competidores, &voltas);
+    for(i=0; i<competidores; i++)//competidores - competidor atual=i. Executada uma vez a cada competidor
+    {
+        total=0;
+        for(x=0;x<voltas; x++){//voltas. Executada uma vez a cada volta
+            scanf("%d", &tempo);
+            total+=tempo;
+        }
+        if(i==0||total<menorT){
+            menorT=total;
+            aux=i+1;//atualiza a vari�vel com o n�mero do competidor
+        }
+    }
+    printf("%d\n", aux);
+    return 0;
+}
