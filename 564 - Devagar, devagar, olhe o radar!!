@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    double via, veiculo;
+    scanf ("%lf%lf", &via, &veiculo);
+
+    if (veiculo>via && veiculo<=(0.2*via+via))
+    {
+        printf ("85.13\n4\n");
+    }
+    else
+    {
+        if ((0.2*via+via)<veiculo&&veiculo<=(0.5*via+via))
+        {
+            printf ("127.69\n5\n");
+        }
+        else
+        {
+            if (veiculo>0.5*via+via)
+            {
+            printf ("574.62\n7\n");
+            }
+
+        else
+        {
+            if (veiculo<=via)
+            {
+                printf("0.00\n0\n");
+
+            }
+        }
+        }
+    }
+
+    return 0;
+}
