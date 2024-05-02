@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() 
+{
+    int p, media, soma, somaD, d, maior, i, j;    
+    scanf("%d", &p);    
+    int v[p];    
+    for(i=0; i< p; i++) 
+    {
+        scanf("%d", &v[i]);
+        if(i==0 || maior<v[i])
+        {
+            maior=v[i];
+        }
+    }    
+    for(i=1; i<=maior; i++) 
+    {
+        somaD= 0;        
+        for(j=0; j<p; j++) 
+        {
+            if(v[j] - i < 0)
+            {
+                d=(v[j] - i)*-1;
+            }
+            else
+            {
+                d=v[j]-i;
+            }            
+            somaD+=d;
+        }        
+        if(i==1 || somaD<soma) 
+        {
+            soma = somaD;
+            media = i;
+        }
+    }    
+    printf("%d %d\n", soma, media);    
+    return 0;
+}
