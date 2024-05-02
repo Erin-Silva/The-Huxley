@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define TAM 10
+
+int main()
+{
+    int n, x, y, v[TAM], cont;
+    for(n=0;n<TAM;n++)
+    {
+        scanf("%d", &v[n]);
+    }
+    x=v[9];
+    for(y=0, cont=0;y<n;y++)
+    {
+        if(x==v[y])
+            cont++;
+    }
+    printf("O numero %d apareceu %d vezes\n", x, cont);
+    return 0;
+}
