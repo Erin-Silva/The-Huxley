@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    double m [12][12], med, som;
+    int a, i, j;
+    char p;
+    scanf("%d%*c%c%*c", &a, &p);
+    
+    for (i=0; i<12; i++)
+    {
+        for(j=0; j<12; j++)
+        {
+            scanf("%lf", &m[i][j]);
+        }
+    }
+    if (p == 'S')
+    {
+        for (i=0; i<12; i++)
+        {
+            som += m[a][i];
+        }
+        printf("%.1lf", som);
+    }
+    else
+    {
+        for (i=0; i<12; i++)
+        {
+            som += m[a][i];
+        }
+        med = som/12;
+        printf("%.1lf", med);
+    }    
+    return 0;
+}
