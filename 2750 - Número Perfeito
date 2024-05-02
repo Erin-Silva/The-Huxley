@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int casos, n, x, y, somaD;
+    scanf("%d", &casos);
+    for(x=1;x<=casos;x++)
+    {
+        scanf("%d", &n);
+        for(y=1, somaD=0;y<n;y++)
+        {
+            if(n%y==0)
+            {
+                somaD+=y;
+            }
+        }
+        if(somaD==n)
+            printf("%d eh perfeito\n", n);
+        else
+            printf("%d nao eh perfeito\n", n);
+    }
+    return 0;
+}
