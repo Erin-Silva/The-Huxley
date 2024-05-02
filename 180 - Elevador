@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int leituras, capacidade, entra, sai, cont = 0, i;
+    scanf("%d%d", &leituras, &capacidade);
+    for (i = 0; i < leituras; i++) 
+    {
+        scanf("%d%d", &sai, &entra);
+        cont += entra - sai;
+        if (cont > capacidade) 
+        {
+            printf("S\n");
+            return 0;
+        }
+    }
+    printf("N\n");
+    return 0;
+}
+
