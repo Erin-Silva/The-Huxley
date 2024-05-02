@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int v[50], ve[50]={0};
+    int n, x, y, cont, c, aux, m;
+    scanf("%d", &n);
+    for(x=0; x<n; x++)
+    {
+        scanf("%d", &v[x]);
+    }
+    for(x=0; x<n; x++)
+    {
+        if(ve[x]!=-1)
+        {
+            cont=1;
+            for(y=x+1; y<n; y++)
+            {
+                if(v[y]==v[x])
+                    cont++;
+                    ve[x]=-1;
+            }
+            ve[x]=cont;
+        }
+    }
+    aux=0;
+    for(x=1; x<n; x++)
+    {
+        if(ve[x]>ve[aux] || (ve[x]==ve[aux] && v[x]<v[aux]))
+        {
+            aux=x;
+        }
+    }
+    printf("%d\n%d\n", v[aux], ve[aux]);
+
+    m=v[aux];
+    aux=0;
+    c=0;
+    for(x=0; x<n; x++)
+    {
+        if(v[x]==m)
+            c++;
+        else
+        {
+            if(c>aux){
+                aux=c;
+            }
+            c=0;
+        }
+    }
+    if(v[x-1]==m)
+    {
+        if(c>aux)
+            aux=c;
+    }
+    printf("%d\n", aux);
+    return 0;
+}
