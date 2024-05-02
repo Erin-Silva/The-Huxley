@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main()
+{
+    double capital, taxa, rendimento, montante;
+    int anos, trimestres, cont;
+    scanf("%lf%lf%d", &capital, &taxa, &anos);
+    trimestres=4*anos;
+    montante=capital;
+    for(cont=1;cont<=trimestres;cont++)
+    {
+        rendimento=montante*taxa;
+        montante+=rendimento;
+
+        printf("Rendimento: %.2lf Montante: %.2lf\n", rendimento, montante);
+    }
+
+    return 0;
+}
