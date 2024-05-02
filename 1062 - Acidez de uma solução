@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    double ph;
+    scanf ("%lf", &ph);
+
+    if (7>ph)
+    {
+        printf("Acida\n");
+    }
+    if (7<ph)
+    {
+        printf ("Basica");
+    }
+
+    if (7==ph)
+    {
+        printf ("Neutra");
+    }
+
+    return 0;
+}
