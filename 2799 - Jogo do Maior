@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{
+    int nRod, a, b, x, cont1, cont2;
+    scanf("%d", &nRod);
+    
+    while(nRod!=0)
+    {
+        cont1=0;
+        cont2=0;
+        for(x=0;x<nRod;x++)
+        {
+            scanf("%d%d", &a, &b);
+            if(a>b)
+              cont1++;
+            else if(b>a)
+              cont2++;
+        }
+    
+     printf("%d %d\n", cont1, cont2);
+     scanf("%d", &nRod);
+    }
+	return 0;
+}
