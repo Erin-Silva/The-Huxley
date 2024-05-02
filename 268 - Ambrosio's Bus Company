@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct
+{
+    int passagem; 
+    char data[110];
+    char partida[500];
+    char destino[500];
+    char horario[100];
+    int seat;
+    int idade;
+    char nome[600];
+}registro;
+
+int main()
+{
+    int i=0;
+    double media=0, soma=0;
+    registro m[440];
+    //int repetitions=44;
+    
+    //(m[i].passagem != -1)
+    //for (i=0; i<repetitions; i++)
+    //while (scanf("%d", &m[i].passagem) != -1)
+    while(1)//por que raios essa flag n?o funcionaaa???
+    {
+        scanf("%d", &m[i].passagem); //getchar();
+        if (m[i].passagem == -1){ //(m[i].passagem < 0 && m[i].passagem >-2)
+            break;
+        }
+        scanf(" %s", m[i].data);
+        scanf(" %[^\n]s", m[i].partida);
+        scanf(" %[^\n]s", m[i].destino);
+        scanf(" %s", m[i].horario);
+        scanf("%d", &m[i].seat);
+        scanf("%d", &m[i].idade);
+        scanf(" %[^\n]s", m[i].nome);
+        
+        soma += m[i].idade;
+        i++;
+    }
+
+    media = soma / i;
+    for (int j = 0; j < i; j++)
+    {
+        if (m[j].idade>media && m[j].seat % 2 == 0)
+        {
+            printf("%s\n", m[j].nome);
+        }
+    }
+
+    return 0;
+}
