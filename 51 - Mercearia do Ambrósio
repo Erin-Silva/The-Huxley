@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int codigo, quantidade;
+    double preco, total;
+    scanf("%d%d", &codigo, &quantidade);
+
+    switch (codigo)
+    {
+        case 1: (preco=5.3);break;
+        case 2: (preco=6.0);break;
+        case 3: (preco=3.2);break;
+        default: (preco=2.5);
+    }
+    total=preco*quantidade;
+
+    if(quantidade>=15||total>=40)
+    {
+        total=total-total*0.15;
+        printf("R$ %.2lf\n", total);
+    }
+    else
+    {
+        printf("R$ %.2lf\n", total);
+    }
+
+
+    return 0;
+}
