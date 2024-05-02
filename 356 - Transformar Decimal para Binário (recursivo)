@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+void Conversao(int n) 
+{
+    if (n > 0) 
+    {
+        int bit = n % 2;
+        Conversao(n / 2);
+        printf("%d\n", bit);
+    }
+}
+
+int main() 
+{
+    int n;
+    scanf("%d", &n);
+    if (n == 0)
+        printf("0\n");
+    else
+        Conversao(n);
+    return 0;
+}
