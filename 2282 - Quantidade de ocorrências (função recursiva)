@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int funcao(int n, int x) 
+{
+    int digito;
+    if (n == 0)
+        return 0;
+    else
+    {
+        digito = n % 10;
+        if (digito == x)
+            return 1 + funcao(n / 10, x);
+        else
+            return funcao(n / 10, x);
+    }
+}
+
+int main() 
+{
+    int n, x;
+    scanf("%d %d", &n, &x);
+    printf("%d\n", funcao(n, x));
+    return 0;
+}
