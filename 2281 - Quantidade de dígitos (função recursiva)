@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <math.h>
+
+
+int funcao(long long n) 
+{
+    if (n < 10)
+        return 1;
+    else
+        return 1 + funcao(n / 10);
+}
+
+int main() 
+{
+    long long x;
+    scanf("%lld", &x);
+    printf("%d\n", funcao(x));
+    return 0;
+}
