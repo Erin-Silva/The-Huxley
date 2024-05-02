@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int fat(int n)
+{
+    if(n == 1 || n == 2)
+        return (1);
+    else
+        return (fat(n-1)+fat(n-2));
+}
+
+int main()
+{
+    int x, y, soma=0;
+    scanf("%d", &y);
+    for(int i=0; i<y; i++)
+    {
+        scanf("%d", &x);
+        soma+=fat(x);
+    }
+    printf("%d\n", soma);
+    return 0;
+}
