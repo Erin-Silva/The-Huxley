@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int sandu;
+    double queijo, presunto, hamburguer;
+    scanf ("%d", &sandu);
+    queijo = 2 * 0.050 * sandu;
+    presunto = 0.050 * sandu;
+    hamburguer = 0.100 * sandu;
+    printf("%.2lf\n%.2lf\n%.2lf\n", queijo, presunto, hamburguer);
+    return 0;
+}
