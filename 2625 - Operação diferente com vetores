@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x, y, z, ve, w;
+    char op;
+    scanf("%d", &ve);
+    double v1[ve], v2[ve], v;
+    for(x=0;x<ve;x++)
+    {
+        scanf("%lf", &v1[x]);
+    }
+    for(y=0;y<ve;y++)
+    {
+        scanf("%lf", &v2[y]);
+    }
+    getchar();
+    scanf("%c", &op);
+    if(op=='<')
+    {
+        for(z=0,v=0;z<ve;z++)
+        {
+            v=(v1[z]-10)+v2[z];
+            printf("%.2lf ", v);
+        }
+        printf("\n");
+    }
+    else
+    {
+        for(w=0,v=0;w<ve;w++)
+        {
+            v=(v1[w]+10)-v2[w];
+            printf("%.2lf ", v);
+        }
+        printf("\n");
+    }
+    return 0;
+}
