@@ -1,0 +1,49 @@
+#include <stdio.h>
+//#include <string.h>
+
+int main()
+{
+    int m[101][101], l, c, i, j, dp, ds, count1=0, count2=0;
+    scanf("%d%d", &l, &c);
+    for (i=0; i<l; i++)
+    {
+        for (j=0; j<c; j++)
+            scanf("%d", &m[i][j]);
+    }
+    printf ("Matriz formada:\n");
+    for (i=0; i<l; i++)
+    {
+        printf("%d", m[i][0]);
+        for (j=1; j<c; j++)
+            printf(" %d", m[i][j]);
+            
+        printf("\n");
+    }
+    if (l != c)
+    {
+        printf ("A diagonal principal e secundaria nao pode ser obtida.\n");
+    }
+    else
+    {
+        for (i=0; i<l; i++)
+        {
+            dp += m[i][i];
+            ds += m[i][l-i-1];
+        }
+        printf ("A diagonal principal e secundaria tem valor(es) %d e %d respectivamente.\n", dp, ds);
+    }
+    
+    for (i=0; i<l; i++)
+    {
+        for (j=0; j<c; j++)
+        {
+            if (m[i][j] < 0)
+                count1++;
+            if (m[i][j] > 0)
+                count2++;
+        }
+    }
+    printf ("A matriz possui %d numero(s) menor(es) que zero.\n", count1);
+    printf ("A matriz possui %d numero(s) maior(es) que zero.\n", count2);
+    return 0;
+}
