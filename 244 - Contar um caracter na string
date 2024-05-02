@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    char a[51], y;
+    int cont=0, i;
+    scanf("%50s%*c", a);
+    scanf("%c", &y);
+    i=0;
+    while(a[i] != '\0')
+    {
+        if(a[i] == y)
+            cont++;
+        i++;
+    }
+    printf("%d", cont);
+    return 0;
+}
