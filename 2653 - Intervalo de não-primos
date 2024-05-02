@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{
+    int n, x, cont, aux;
+    scanf("%d", &n);
+    
+    for(x=1;x<=n;x++)
+    {
+        cont=0;
+        for(aux=1;aux<=x;aux++)
+        {
+            if(x%aux==0)
+              cont++;
+        }
+        if(cont!=2)
+        {
+            printf("%d ", x);
+        }
+    }
+	return 0;
+}
