@@ -1,0 +1,39 @@
+#include <stdio.h>
+//#include <string.h>
+
+int main()
+{
+    char n[401], m[401], a;
+    int i=0, j, k;
+    scanf("%400[^\n]", n);
+
+    while (n[i] != '\0')
+    {
+        i++;
+    }
+    if(n[i-1] == '\n')
+    {
+        i--;
+    }
+    i--;
+    while (n[i] == ' ')
+    {
+        i--;
+    }
+    j=0;
+    while (n[i] != ' ' && i >= 0)
+    {
+        m[j] = n[i];
+        j++;
+        i--;
+    }
+    m[j] = '\0';
+    for (k = 0; k < j/2; k++)
+    {
+        a = m[k];
+        m[k] = m[j-k-1];
+        m[j-k-1] = a;
+    }
+    printf("%s\n",m);
+    return 0;
+}
