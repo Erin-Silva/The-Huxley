@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+    char nome[1000];
+    char cor[15];
+    char tam;
+} camisetas;
+
+int main() {
+    int n, aux;
+    while (1) {
+        scanf("%d", &n);
+        if (n == 0)
+            break;
+
+        camisetas m[n];
+
+        for (int i = 0; i < n; i++) {
+            scanf(" %[^\n]", m[i].nome);
+            scanf(" %s %c", m[i].cor, &m[i].tam);
+        }
+
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                aux = strcmp(m[i].cor, m[j].cor);
+                if (aux > 0 || (aux == 0 && m[i].tam < m[j].tam) ||
+                    (aux == 0 && m[i].tam == m[j].tam && strcmp(m[i].nome, m[j].nome) > 0)) {
+                    camisetas temp = m[i];
+                    m[i] = m[j];
+                    m[j] = temp;
+                }
+            }
+        }
+
+
+        for (int i = 0; i < n; i++) {
+            printf("%s %c %s\n", m[i].cor, m[i].tam, m[i].nome);
+        }
+        printf("\n"); 
+    }
+
+    return 0;
+}
