@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct
+{
+    int age;
+    char nome[50];
+    char gen;
+    char estado_civil;
+    int amigos;
+    int fotos;
+} tipo_pessoa;
+
+int main()
+{
+    int qtd;
+    tipo_pessoa v[1000];
+    scanf("%d", &qtd);
+    for (int i=0; i<qtd; i++)
+    {
+        scanf("%d", &v[i].age);
+        getchar();
+        scanf("%50[^\n]", v[i].nome);
+        getchar();
+        scanf("%c", &v[i].gen);
+        getchar();
+        scanf("%c", &v[i].estado_civil);
+        scanf("%d", &v[i].amigos);
+        scanf("%d", &v[i].fotos);
+    
+        printf("Idade: %d\n", v[i].age);
+        printf("Nome: %s\n", v[i].nome);
+        printf("Sexo: %c\n", v[i].gen);
+        printf("Estado Civil: %c\n", v[i].estado_civil);
+        printf("Numero de amigos: %d\n", v[i].amigos);
+        printf("Numero de fotos: %d\n", v[i].fotos);
+        printf("\n");
+    }
+
+    return 0;
+}
