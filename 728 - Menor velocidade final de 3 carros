@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+double velkm(double vel, double a, double t)
+{
+    return 3.6*(vel+a*t);
+}
+
+int main()
+{
+    double vel, a, t, km, menor;
+    int i;
+    for (i=0; i<3; i++)
+    {
+        scanf("%lf%lf%lf", &vel, &a, &t);
+        km = velkm(vel, a, t);
+        if(i==0 || km<menor)
+            menor=km;
+    }
+    printf("%.1lf\n", menor);
+    
+    return 0;
+}
+
