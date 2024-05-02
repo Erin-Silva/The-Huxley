@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    double dias, km, valor;
+    scanf ("%lf %lf", &dias, &km);
+    valor= (dias*30.0 + km*0.01)*0.90;
+    printf("%.2lf\n", valor);
+    return 0;
+}
