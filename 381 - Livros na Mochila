@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int l, soma=0, cont=0;
+
+    while (soma<=18)
+    {
+        scanf("%d", &l);
+        soma+=l;
+        if(soma<=18)
+            cont++;
+    }
+    printf("%d", cont);
+    return 0;
+}
