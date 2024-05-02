@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int car, cas = 0;
+    double tot = 0, multa=12.89;
+
+    while(1)//1 usado para criar loop infinito (1=true)
+    {
+        scanf("%d", &car);
+        if(car==999)
+        {
+            break;//break para sair do loop (que nem no comando switch) quando 999 foi lido
+        }
+        if(car > 2)
+        {
+            cas++;
+            tot+=(car-2)*multa;
+        }
+    }
+    printf("%.2lf\n", tot);
+    printf("%d\n", cas);
+
+
+    return 0;
+}
