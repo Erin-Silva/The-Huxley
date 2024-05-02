@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int id, x, y, v[37], ve[37], z;
+    for(x=0;x<37;x++)
+    {
+        scanf("%d", &ve[x]);
+        scanf("%d", &v[x]);
+    }
+    scanf("%d",&id);
+    while(id!=9999)
+    {
+        scanf("%d", &y);
+        z=0;
+        for(x=0;x<37;x++)
+        {
+            if(ve[x]==y)
+            {
+                z=1;
+                if(v[x]>0)
+                {
+                    printf("%d\n",id);
+                    v[x]--;
+                }
+                else
+                {
+                    printf("INDISPONIVEL\n");
+                }
+            }
+        }
+    if(!z)
+    {
+        printf("INDISPONIVEL\n");
+    }
+    scanf("%d", &id);
+    }
+    return 0;
+}
