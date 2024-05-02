@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+/* 0<=n<=12.*/
+
+int main()
+{
+    int n, l, x, cont;
+    scanf("%d%d", &n, &l);
+
+    for(x=n,cont=0;x<l;x++)
+    {
+        if(x%n==0)//caso sejam multiplos
+        cont++;
+    }
+
+    printf("O numero %d tem %d multiplos menores que %d.\n", n, cont, l);
+    return 0;
+}
