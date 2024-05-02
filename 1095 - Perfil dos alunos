@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct 
+{
+    int media;
+    char nome[100];
+    int idade;
+    char curso;
+} Aluno;
+
+int main() 
+{
+    Aluno m[100];
+    int cont_filo = 0, cont_aprovados = 0, nao_aprovados = 0, idade_mais_jovem = 200;
+    int media;
+    char nome_mais_jovem[100];
+    
+    int i = 0;
+    while (1) 
+    {
+        scanf("%d", &media);
+        if (media < 0) 
+        {
+            if (i == 0) //ent�o era s� colocar no come�o e dentro do while...
+            {
+                printf("Quantidade de aprovados em filosofia : 0\n");
+                printf("Quantidade de aprovados : 0\n");
+                printf("Quantidade pessoas maiores de idade nao aprovadas em sociologia : 0\n");
+            } 
+            else 
+            {
+                printf("Quantidade de aprovados em filosofia : %d\n", cont_filo);
+                printf("O nome da pessoa mais jovem : %s\n", nome_mais_jovem);
+                printf("Quantidade de aprovados : %d\n", cont_aprovados);
+                printf("Quantidade pessoas maiores de idade nao aprovadas em sociologia : %d\n", nao_aprovados);
+            }
+            break;
+        }
+
+        scanf("%s", m[i].nome);
+        scanf("%d", &m[i].idade);
+        scanf(" %c", &m[i].curso);
+
+        if (m[i].curso == 'f') 
+        {
+            if (media >= 70) 
+            {
+                cont_filo++;
+            }
+        }
+
+        if (m[i].idade < idade_mais_jovem) 
+        {
+            strcpy(nome_mais_jovem, m[i].nome);
+            idade_mais_jovem = m[i].idade;
+        }
+
+        if (media >= 70) 
+        {
+            cont_aprovados++;
+        }
+
+        if (m[i].idade >= 18 && m[i].curso == 's' && media < 70) 
+        {
+            nao_aprovados++;
+        }
+
+        i++;
+    }
+    
+    return 0;
+}
