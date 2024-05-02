@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+/* uma caixa com 12 pregos custa R$ 7,89.
+quantidade de pregos necess�rios para cada quadro, at� que seja informada
+uma quantidade �mpar, e exiba o valor total que ser� gasto e a quantidade de pregos que v�o sobrar.*/
+
+int main()
+{
+    int pregos, caixas, resto, soma;
+    double tot;
+    scanf("%d", &pregos);
+
+    while(pregos%2==0)
+    {
+        soma+=pregos;//vai adicionando o n� de pregos
+        scanf("%d", &pregos);
+    }
+
+    caixas=(soma/12)+1;//quantas caixas ser�o necess�rias. o 1 � caso for necess�rio mais uma caixa
+    resto=caixas*12-soma;//pregos que faltam para completar uma caixa e a quantidade de pregos totais
+    tot=caixas*7.89;
+    printf("%.2lf\n", tot);
+    printf("%d\n", resto);
+
+
+    return 0;
+}
+/*caixas=(soma/12)+1. se forem necess�rios apenas alguns pregos a mais do que 12 para fizar os quadros, ent�o vai ser necess�rio mais um pacote.
+Se a divis�o do total de pregos por 12 para saber as caixas necess�rias fosse 1,97653 ent�o ela precisaria n�o somente de 1 pacote e sim 2.*/
