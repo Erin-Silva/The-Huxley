@@ -1,0 +1,69 @@
+#include <stdio.h>
+
+int main() 
+{
+    int v[3][3];
+    int menor = 0, diagonal = 0, soma = 0, positivos = 0, soma_p = 0, delta;
+    double media;
+
+    for (int i = 0; i < 3; i++) 
+    {
+        for (int j = 0; j < 3; j++) 
+        {
+            scanf("%d", &v[i][j]);
+            if (i == j) 
+            {
+                diagonal += v[i][j];
+            } 
+            else 
+            {
+                soma += v[i][j];
+            }
+            if (v[i][j] > 0) 
+            {
+                positivos++;
+            }
+            if (i == 0 && j == 0) 
+            {
+                menor = v[i][j];
+            } 
+            else if (v[i][j] < menor) 
+            {
+                menor = v[i][j];
+            }
+        }
+    }
+    
+    /*if (menor_valor % 2 == 0) 
+    {
+        delta = 1;
+    } 
+    else 
+    {
+        delta = 0;
+    }*/
+    delta = (menor % 2 == 0) ? 1 : 0;//quase eu esque�o como usar tern�rio
+
+    media = 0.0;
+    if (positivos > 0) 
+    {
+        for (int i = 0; i < 3; i++) 
+        {
+            for (int j = 0; j < 3; j++) 
+            {
+                if (v[i][j] > 0) 
+                {
+                    soma_p += v[i][j];
+                }
+            }
+        }
+        media = (double)soma_p / positivos;
+    }
+
+    printf("%.2lf ", media);
+    printf("%d ", menor);
+    printf("%d ", delta);
+    printf("%d\n", soma);
+
+    return 0;
+}
