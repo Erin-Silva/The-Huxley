@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int d, r, l, p, g;
+    int qtL, qtTanq, gasto;
+    scanf ("%d%d%d%d%d", &d, &r, &l, &p, &g);
+    qtL= d/10-l;
+    qtTanq= qtL/l;
+
+    if (qtTanq>p)
+    {
+        printf ("Nao pode viajar.\n");
+    }
+    else
+    {
+        gasto= qtL*g;
+        if (gasto>r)
+        {
+           printf ("Nao pode viajar.\n");
+        }
+        else
+        {
+            printf ("Pode viajar.\n");
+            printf ("R$: %d\n", r-gasto);
+        }
+
+    }
+
+
+    return 0;
+}
