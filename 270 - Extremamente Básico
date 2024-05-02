@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+/*Leia 2 valores inteiros e armazene-os nas variaveis A e B. Efetue a soma de A e B atribuindo o seu resultado na variavel X.*/
+
+int main()
+{
+    int a, b, soma;
+    scanf ("%d %d", &a, &b);
+    soma = a + b;
+    printf("X = %d\n", soma);
+    return 0;
+}
