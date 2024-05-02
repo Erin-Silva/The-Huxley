@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int mdc (int n, int m)
+{
+    int aux, result;
+    if(m == 0)
+        return n;
+    else
+        return mdc(m, n%m);
+    /* iterativa:
+    while(n % m > 0)
+    {
+        aux = n%m;
+        n=m;
+        m=aux;
+    }
+    result=y;
+    return result;*/
+}
+
+int main ()
+{
+    int x, y;
+    scanf("%d%d", &x, &y);
+    printf("%d\n", mdc(x, y));
+    return 0;
+}
