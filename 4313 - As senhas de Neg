@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main() {
+    int senhas_num, i, j;
+    char keys[200], final[200] = "";
+    int soma = 0;
+    scanf("%d", &senhas_num);
+    
+    for (i = 0; i < senhas_num; i++) 
+    {
+        scanf("%s%*c", keys);
+        soma += strlen(keys);
+        for (j = 0; keys[j] != '\0'; j++) 
+        {
+            if (!((keys[j] >= '0' && keys[j] <= '9') || (keys[j] >= 'A' && keys[j] <= 'Z')))
+            {
+                printf("Alguma senha eh invalida!\n");
+                return 0;
+            }
+            else 
+            {
+                if (keys[j] == '0') { 
+                    keys[j] = '6'; }
+                else if (keys[j] == '1') { 
+                    keys[j] = '7'; }
+                else if (keys[j] == '2') { 
+                    keys[j] = '9'; }
+                else if (keys[j] == '3') { 
+                    keys[j] = '8'; }
+                else if (keys[j] == '4') { 
+                    keys[j] = 'A'; }
+                else if (keys[j] == '5') { 
+                    keys[j] = '2'; }
+                else if (keys[j] == '6') { 
+                    keys[j] = 'B'; }
+                else if (keys[j] == '7') { 
+                    keys[j] = 'F'; }
+                else if (keys[j] == '8') { 
+                    keys[j] = '1'; }
+                else if (keys[j] == '9') { 
+                    keys[j] = 'C'; }
+                else if (keys[j] == 'A') { 
+                    keys[j] = '0'; }
+                else if (keys[j] == 'B') { 
+                    keys[j] = 'D'; }
+                else if (keys[j] == 'C') { 
+                    keys[j] = 'E'; }
+                else if (keys[j] == 'D') { 
+                    keys[j] = '3'; }
+                else if (keys[j] == 'E') { 
+                    keys[j] = '5'; }
+                else if (keys[j] == 'F') { 
+                    keys[j] = '4'; }
+                
+            
+                
+            }
+        }
+        strcat(final, "-"); 
+        strcat(final, keys); 
+    }
+    if (soma >= 1)
+        {
+            printf("%s", final);
+        }
+    
+    printf(" %d\n", soma);
+    return 0;
+}
