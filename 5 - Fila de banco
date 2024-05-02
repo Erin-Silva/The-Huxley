@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define M 10000
+//y=maior; x=menor
+int main()
+{
+    int v[M], ve[M], c[2*M], n, m, k, x, y, z, aux;
+    scanf("%d%d%d", &n, &m, &k);
+    for(x=0;x<n;x++)
+    {
+        scanf("%d", &v[x]);
+    }
+    for(x=0;x<m;x++)
+    {
+        scanf("%d", &ve[x]);
+    }
+    if(n>m)
+    {
+        y=n;
+        z=m;
+    }
+    else
+    {
+        y=m;
+        z=n;
+    }
+    for(x=0;x<z;x++)
+    {
+        if(k==1)
+        {
+            c[2*x]=ve[x];
+            c[2*x+1]=v[x];
+        }
+        else
+        {
+            c[2*x]=v[x];
+            c[2*x+1]=ve[x];
+        }
+    }
+    aux=2*x;
+    for(;x<y;x++)
+    {
+        c[aux++]=(z==n?ve[x]:v[x]);
+    }
+    for(x=0;x<n+m;x++)
+    {
+        printf("%d\n",c[x]);
+    }
+    return 0;
+}
