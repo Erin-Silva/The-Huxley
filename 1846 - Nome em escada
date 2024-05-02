@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char n[50];
+    int i, j, k, c;
+    scanf("%49[^\n]", n);
+    i=0;
+    while(n[i]!='\0')
+    {
+        c=n[i];
+        if(c>=97 && c<=122)
+        {
+            n[i] = c-32;
+        }
+        i++;
+    }
+    for(j=1;j<=i;j++)
+    {
+        for(k=0;k<j;k++)
+        {
+            printf("%c", n[k]);
+        }
+         printf("\n");
+    }
+    return 0;
+}
