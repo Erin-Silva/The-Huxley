@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    int notas[1000], pesos[1000];
+    double somaPesos = 0.0, somaProdutos = 0.0, media;
+    scanf("%d", &N);
+    for (int i = 0; i < N; i++) 
+    {
+        scanf("%d", &notas[i]);
+    }
+    for (int i = 0; i < N; i++) 
+    {
+        scanf("%d", &pesos[i]);
+        somaPesos += pesos[i];
+    }
+    for (int i = 0; i < N; i++) 
+    {
+        somaProdutos += notas[i] * pesos[i];
+    }
+    media = somaProdutos / somaPesos;
+    printf("%.2lf\n", media);
+
+    return 0;
+}
