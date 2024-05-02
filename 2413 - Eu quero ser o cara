@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int niveis, amigos, a_n, x, y, n, menor;
+    int v[1001]={0};
+    scanf("%d%d", &niveis, &amigos);
+    for(x = 0; x<amigos; x++)
+    {
+        scanf("%d", &a_n);
+        for(y=0;y<a_n;y++)
+        {
+            scanf("%d", &n);
+            v[n]++;
+        }
+    }
+    menor=v[1];
+    for(x=2;x<=niveis;x++)
+    {
+        if(v[x]<menor)
+            menor=v[x];
+    }
+    printf("The %d friends could finish the game %d times", amigos, menor);
+    return 0;
+}
