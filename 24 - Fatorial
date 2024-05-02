@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+//recursiva
+
+int fat(int n)
+{
+    if(n == 1 || n==0)
+        return (1);
+    else
+        return (n* fat(n-1));
+}
+
+int main()
+{
+    int x;
+    while(scanf("%d", &x) && x != -1)
+    {
+        printf("%d\n", fat(x));
+    }
+    return 0;
+}
