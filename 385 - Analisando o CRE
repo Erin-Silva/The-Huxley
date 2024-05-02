@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+int main()
+{
+    char matricula[10], menor_matricula[10];
+    double cre, media, cont=0, menor_cre=100; //nota m�xima=100 neste caso de teste
+
+    while(1)
+    {
+        scanf("%s", &matricula);
+        if(strcmp(matricula, "999") == 0)//Para comparar o conte�do das strings, precisamos usar a fun��o strcmp, que retorna 0 se as strings s�o iguais.
+        {
+          break;
+        }
+        scanf("%lf", &cre);
+        cont++;
+        media+=cre;
+        if(cre<menor_cre)
+        {
+            menor_cre=cre;
+            strcpy(menor_matricula, matricula);//� uma fun��o da biblioteca padr�o em C, que copia o conte�do de uma string em outra.
+        }
+    }
+    media=media/cont;
+
+
+    printf("%s\n%.2lf\n", menor_matricula, media);
+    return 0;
+}
