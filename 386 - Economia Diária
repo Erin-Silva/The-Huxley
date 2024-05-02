@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+    double valor, valorAnterior, total=0;
+    int dias=0, i=1;//valor depositado no dia 1
+    scanf("%lf", &valor);
+
+    while (i<=7) //dias da semana
+    {
+        if (i>1 && valor>=valorAnterior+0.5) //avaliando a partir do 2 dia da semana. verifica��o do valor dito no enunciado para a meta
+        {
+            dias++;//adiciona 1 aos dias caso a meta for conclu�da
+        }
+
+        total+=valor;//acumula o valor depositado ao total
+        valorAnterior = valor;//utilizado para compara��o nos pr�ximos dias
+        i++;
+
+        if (i<=7) //ter certeza que est� no �ltimo valor
+            scanf("%lf", &valor);
+    }
+
+    printf("R$ %.2lf\n", total);
+    printf("%d\n", dias);
+
+    return 0;
+}
