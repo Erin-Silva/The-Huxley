@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <math.h>
+
+
+const int hogsmeade_x = 34;
+const int hogsmeade_z = 220;
+const int kakariko_x = 0;
+const int kakariko_z = 0;
+const int solitude_x = 140;
+const int solitude_z = 456;
+
+float distancia(int x1, int z1, int x2, int z2)
+{
+    return sqrt(pow(x1 - x2, 2) + pow(z1 - z2, 2));
+}
+
+int main()
+{
+    int x, z;
+    scanf("%d%d", &x, &z);
+    float dH, dK, dS;
+    dH = distancia(x, z, hogsmeade_x, hogsmeade_z);
+    dK = distancia(x, z, kakariko_x, kakariko_z);
+    dS = distancia(x, z, solitude_x, solitude_z);
+    printf("Distancia para Hogsmeade: %.2f\n", dH);
+    printf("Distancia para Kakariko: %.2f\n", dK);
+    printf("Distancia para Solitude: %.2f\n", dS);
+    return 0;
+}
