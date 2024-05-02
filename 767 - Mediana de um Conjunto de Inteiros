@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 1000
+
+int main()
+{
+    int v[MAX], n, i, j, num, aux, menor;
+    n=0;
+    while(scanf("%d", &num)==1)
+    {
+        v[n++]=num;
+    }
+    for(i=0; i<n-1; i++)
+    {
+        menor=i;
+        for(j=i+1; j<n; j++)
+        {
+            if(v[j]<v[menor])
+            {
+                menor=j;
+            }
+        }
+        if(menor!=i)
+        {
+            aux= v[menor];
+            v[menor]= v[i];
+            v[i]= aux;
+        }
+    }
+    if(n%2==0)
+    {
+        printf("Mediana = %.1lf\n", (v[n/2-1] + v[n/2])/2.0);
+    }
+    else
+    {
+        printf("Mediana = %d\n", v[n/2]);
+    }
+    return 0;
+}
