@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    double x, y, z, media;
+    int r;
+    scanf ("%lf %lf %lf", &x, &y, &z);
+    media= (x+y+z)/3;
+    r=0;
+    if (x>media)
+    {
+        r=r+1;
+    }
+    if (y>media)
+    {
+        r=r+1;
+    }
+    if (z>media)
+    {
+        r=r+1;
+    }
+
+    printf("%d\n",r);
+    return 0;
+}
