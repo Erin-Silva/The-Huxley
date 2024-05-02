@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int maior(int a, int b)
+{
+    return (a+b+abs(a-b))/2;
+}
+
+int main()
+{
+   int x, y, z, aux;
+   scanf("%d%d%d", &x, &y, &z);
+   aux = maior(x, y);
+   aux = maior(aux, z);
+   printf("%d eh o maior\n", aux);
+   return 0;
+}
