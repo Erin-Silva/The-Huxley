@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int r, n, cont, soma, x;
+    scanf("%d%d", &r, &n);
+    for(cont=1,soma=0, x=1;cont<=n;cont++)
+    {
+        x+=r;
+        cont=x;
+        soma+=cont;
+    }
+    printf("A somatoria da PA eh: %d\n", soma+1);
+    return 0;
+}
