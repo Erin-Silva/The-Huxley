@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int v[45], ve[30], a, b, c, d, e;
+    for(a=0;a<45;a++)
+    {
+        scanf("%d", &v[a]);
+    }
+    for(b=0;b<30;b++)
+    {
+        scanf("%d", &ve[b]);
+    }
+    for(c=0;c<45;c++)
+    {
+        e=v[c];
+        for(d=0;d<30;d++)
+        {
+            if(ve[d]==e)
+                printf("%d ",e);
+        }
+    }
+    return 0;
+}
