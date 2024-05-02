@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int n, kg, k;
+    double spent, spent_total = 0.0, kg_media, media_din, kg_total = 0;
+    char nome[100];
+    scanf("%d", &n);
+    
+    for (int i = 1; i <= n; i++) 
+    {
+        kg=0;
+        scanf("%lf", &spent);
+        while (getchar() !='\n');//limpar buffer do scanf anterior
+        scanf("%[^\n]%*c", nome);
+        
+        for (int j=0; nome[j] != '\0'; j++)
+        {
+            if (nome[j] == ' ') 
+            {
+                kg++;
+            }
+            
+        }
+        printf("dia %d: %d kg\n", i, kg+1);
+        kg_total += kg+1;
+        spent_total += spent;
+        
+    }
+    
+    kg_media = kg_total / n;
+    media_din = spent_total / n;
+
+    printf("%.2lf kg por dia\n", kg_media);
+    printf("R$ %.2lf por dia\n", media_din);
+
+    return 0;
+}
