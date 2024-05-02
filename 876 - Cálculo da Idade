@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int nascimento, atual;
+    scanf ("%d %d", &nascimento, &atual);
+    printf("%d\n", atual - nascimento);
+    return 0;
+}
